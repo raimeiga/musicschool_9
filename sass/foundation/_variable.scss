@@ -1,0 +1,13 @@
+$color-red: #bc0000;
+
+//vw関数
+@function vw($pixelSize, $baseWidth:1080) {
+ @return calc($pixelSize / $baseWidth * 100vw);
+}
+
+// $pixelSizeにfont-sizeの拡大最大値を入れると、その値以上に拡大しない
+@function hvw($pixelSize) {
+ @return min(calc($pixelSize / 940 * 100vw), $pixelSize * 1px);
+}
+
+
