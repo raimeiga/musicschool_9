@@ -1,2 +1,162 @@
-@use '../foundation/mixin.scss' as *;
-@use '../foundation/variable.scss' as *;
+@use '../foundation/mixin' as *;
+@use '../foundation/variable' as *;
+
+header {
+ z-index: 100;
+}
+
+.l-header__inner {
+ background-color: #fff;
+ background-color: yellow;
+ width: 100%;
+ height: 8rem;
+ padding-inline: 10rem;
+ position: fixed;
+ top: 0;
+ left: 0;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ z-index: 100;
+ //z-indexを一番高くしとかないと、
+ //hamメニューがFVの下層にもぐってしまうので、
+ //必ずheaderにつける。
+ @include sp {
+  height: 5rem;
+  padding-inline: 2rem 0;
+ }
+}
+
+.l-header__logo {
+ background-color: aqua;
+ height: inherit;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.l-header-logo__img {
+ background-color: aqua;
+ width: 3.3rem;
+ @include sp {
+   width: 2rem;
+ }
+}
+
+.l-header-logo__text {
+ background-color: aqua;
+ padding: 0.5rem 0 0 0.9rem;
+}
+
+.l-header-logo__text h2 {
+font-size: 2rem;
+line-height: calc(23 / 20);
+@include sp {
+  font-size: 1.3rem;
+  line-height: calc(14 / 13);
+}
+}
+
+.l-header-logo__text h2 span {
+ font-size: 1.5rem;
+ line-height: calc(23 / 15);
+ @include sp {
+  font-size: 1.3rem;
+  line-height: calc(14 / 13);
+}
+}
+
+
+.l-header__right {
+ height: inherit;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.l-header__nav {
+ height: inherit;
+ @include sp {
+   position: fixed;
+   top: 5rem;
+   right: -120%;
+   transition: right .4s;
+  
+ }
+}
+
+.l-header__nav.active {
+ right: 0;
+}
+
+.l-header-nav__lists {
+ height: inherit;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ column-gap: 3.3rem;
+ @include sp {
+  flex-direction: column;
+  row-gap: 0;
+ }
+}
+
+.l-header-nav__list {
+ height: inherit;
+ @include sp {
+   height: initial;
+ }
+}
+
+.l-header-nav__list a {
+ display: block;
+ background-color: aqua;
+ height: inherit;
+ font-size: 1.7rem;
+ line-height: calc(33 / 17);
+ padding: 2.6rem 0 2.2rem;
+ position: relative;
+ transition: opacity .4s;
+ @include sp {  
+  width: 30rem;
+  height: 5.8rem;
+  background-color: $color-red;
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  padding: 2rem;
+ }
+}
+
+.l-header-nav__list a:hover {
+ @include pc {
+  opacity: 0.5;
+ }
+ @include sp {
+  background-color: #000;
+ }
+}
+
+.l-header-nav__list a::before {
+ @include pc {
+ content: '';
+ width: 100%;
+ height: hvw(2);
+ background-color: #000;
+ position: absolute;
+ left: 0;
+ bottom: hvw(25);
+ transform: scale(0);
+ transform-origin: left;
+ transition: transform .4s;
+}
+}
+
+.l-header-nav__list a:hover::before {
+ transform: scale(1);
+}
+
+
+
+
+

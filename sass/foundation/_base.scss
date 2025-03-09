@@ -7,7 +7,7 @@ html {
  scroll-behavior: smooth;
  word-break: break-all;
  font-size: 10px; 
- @media(min-width:768px) and(max-width:940px) {
+ @media(min-width:768px) and (max-width:940px) {
   font-size: vw(10,940);  
  }
  @include sp {
@@ -21,7 +21,10 @@ body {
  line-height: calc(33 / 18);
  font-weight: 700;
  letter-spacing: 0;
-
+ padding-top: 8rem;
+ @include sp {
+   padding-top: 5rem;
+ }
 }
 
 img {

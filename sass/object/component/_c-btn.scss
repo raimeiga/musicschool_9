@@ -1,3 +1,22 @@
-@use '../../foundation/mixin.scss' as *;
-@use '../../foundation/variable.scss' as *;
+@use '../../foundation/mixin' as *;
+@use '../../foundation/variable' as *;
 
+.c-btn {
+ background-color: $color-red;
+ color: #fff; 
+ border: 0.1rem solid transparent;
+ transition: background-color .4s,color .4s,border .4s;
+}
+
+.c-btn:hover {
+ background-color:#fff;
+ color: $color-red; 
+ border: 0.1rem solid $color-red;
+}
+
+.c-btn--header {
+ font-size: 1.5rem; 
+ line-height: 1;
+ padding: 1.5rem 3rem;
+ margin-left: 3.3rem;
+}

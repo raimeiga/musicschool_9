@@ -1,13 +1,14 @@
 
 //foundation
-@use 'foundation/normalize.scss';
-@use 'foundation/mixin.scss';
-@use 'foundation/variable.scss';
+@use 'foundation/normalize';
+@use 'foundation/mixin';
+@use 'foundation/variable';
 @use 'foundation/base';
 
 //layout
 @use 'layout/l-header';
-@use 'layout/l-footerer';
+@use 'layout/l-footer';
+@use 'layout/l-fV';
 
 
 
